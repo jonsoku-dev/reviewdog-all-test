@@ -22,7 +22,7 @@ jobs:
           reporter: github-pr-review
           workdir: "."
           level: info 
-          filter_mode: file
+          filter_mode: nofilter
           fail_level: none
           eslint_flags: "**/*.{js,jsx,ts,tsx}"
           stylelint_input: "**/*.css"
