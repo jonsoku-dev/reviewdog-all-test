@@ -37,4 +37,77 @@
 /* 선택자 중첩 과다 */
 .header nav ul li a span {
   color: red;
+}
+
+/* 색상값 포맷 완전 불일치 */
+.color-mess {
+  color: RED;
+  background-color: #FF0000;
+  border-color: rgb(255,0,0);
+  outline-color: rgba( 255, 0, 0, 1 );
+}
+
+/* !important 남용 */
+.important-abuse {
+  color: red !important;
+  font-size: 16px !important;
+  margin: 10px !important;
+  padding: 20px !important;
+  background: white !important;
+}
+
+/* 끔찍한 선택자 중첩 */
+.header > div > nav > ul > li > a > span > strong > em {
+  color: blue;
+}
+
+/* 벤더 프리픽스만 사용 */
+.vendor-prefix {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+/* 쓸데없는 단위 사용 */
+.unit-abuse {
+  margin: 0px 0px 0px 0px;
+  padding: 0.0px;
+  width: 100.00%;
+  height: 50.000px;
+}
+
+/* 중복 속성 */
+.duplicate-properties {
+  color: red;
+  font-size: 12px;
+  color: blue;
+  font-size: 16px;
+  color: green;
+  font-size: 20px;
+}
+
+/* 알 수 없는 단위 */
+.invalid-units {
+  width: 100pixels;
+  height: 50points;
+  margin: 10inches;
+  padding: 5meters;
+}
+
+/* 잘못된 속성값 */
+.invalid-values {
+  display: BLOCK;
+  position: nowhere;
+  float: everywhere;
+  clear: something;
+}
+
+/* 들여쓰기 엉망 */
+.indentation-mess{
+color:red;
+    background:blue;
+        margin:10px;
+  padding:20px;
+      border:1px solid black;
 } 

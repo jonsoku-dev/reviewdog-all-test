@@ -1,36 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Lint Error Example</title>
-</head>
-<body>
-    <!-- 닫히지 않은 태그 -->
-    <div>
-        <p>This paragraph is not closed
-        <span>This span is not closed
+<!doctype html>
+<HTML LANG="KO">
+<HEAD>
+<meta charset='utf-8'>
+<TITLE>린트 에러 예제</TITLE>
+<style>
+  .bad-style { color: red; }
+</style>
+</HEAD>
+
+<BODY>
+  <!-- 태그 닫기 실수 -->
+  <DIV>
+    <P>닫히지 않은 문단
+      <span>닫히지 않은 스팬
+        <strong>닫히지 않은 강조
+          <em>닫히지 않은 이탤릭
+
+  <!-- 인라인 스타일 마구 사용 -->
+  <div style="color: red; font-size: 16px; background: white; margin: 10px; padding: 20px; border: 1px solid black;">
+    <p style="color: blue; text-align: center; font-weight: bold;">인라인 스타일 남용</p>
+  </div>
+
+  <!-- 빈 태그들 -->
+  <div></div>
+  <p></p>
+  <span></span>
+
+  <!-- 이상한 들여쓰기 -->
+  <div>
+  <p>
+    <span>
+  <strong>
+      <em>이상한 들여쓰기</em>
+    </strong>
+  </span>
+</p>
     </div>
 
-    <!-- 일관성 없는 들여쓰기 -->
-    <div>
-    <p>Bad indentation</p>
-        </div>
+  <!-- 접근성 무시 -->
+  <img src="no-alt.jpg">
+  <img src="empty-alt.jpg" alt="">
+  <button onclick="doSomething()"></button>
+  <a href="#"></a>
+  <div onclick="handleClick()">클릭</div>
 
-    <!-- 빈 alt 속성 -->
-    <img src="image.jpg" alt="">
+  <!-- 불필요한 타입 속성 -->
+  <script type="text/javascript" language="javascript">
+    alert('안녕하세요');
+  </script>
+  <link type="text/css" rel="stylesheet" href="styles.css">
 
-    <!-- 인라인 스타일 사용 -->
-    <div style="color: red; font-size: 16px;">
-        Bad practice using inline styles
-    </div>
+  <!-- 중복 아이디 -->
+  <div id="duplicate">
+    <span id="duplicate">중복 아이디</span>
+  </div>
 
-    <!-- 대문자 태그 사용 -->
-    <DIV>
-        Using uppercase tags
-    </DIV>
-
-    <!-- type 속성 불필요하게 사용 -->
-    <script type="text/javascript">
-        console.log('Hello');
-    </script>
-</body>
-</html> 
+</BODY>
+</HTML> 
