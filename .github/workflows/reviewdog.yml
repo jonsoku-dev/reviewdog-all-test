@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: reviewdog
-        uses: jonsoku-dev/reviewdog-all@1.0.1
+        uses: jonsoku-dev/reviewdog-all@v1
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
