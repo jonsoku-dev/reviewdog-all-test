@@ -8,9 +8,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: reviewdog
-        uses: jonsoku-dev/reviewdog-all@v1
+        uses: jonsoku-dev/reviewdog-all@1.0.1
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           workdir: "."
           level: info 
+          filter_mode: file
+          fail_level: none
+          eslint_flags: "**/*.{js,jsx,ts,tsx}"
+          stylelint_input: "**/*.css"
+          markdownlint_flags: "**/*.md"
