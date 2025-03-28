@@ -5,6 +5,9 @@ jobs:
   reviewdog:
     name: reviewdog
     runs-on: ubuntu-latest
+    permissions:
+        contents: read      # 코드를 읽기 위한 권한
+        pull-requests: write # PR에 코멘트를 달기 위한 권한
     steps:
       - uses: actions/checkout@v4
       - name: reviewdog
