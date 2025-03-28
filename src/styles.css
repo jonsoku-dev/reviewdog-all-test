@@ -1,0 +1,40 @@
+/* 일관성 없는 들여쓰기 */
+.container {
+  padding: 10px;
+    margin: 20px;
+}
+
+/* 색상 값 일관성 없음 */
+.text-color {
+  color: #fff;
+  background-color: WHITE;
+}
+
+/* 불필요한 0px 단위 */
+.padding {
+  padding: 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+/* 중복 속성 */
+.duplicate {
+  color: red;
+  font-size: 16px;
+  color: blue;
+}
+
+/* 벤더 프리픽스 누락 */
+.transform {
+  transform: rotate(45deg);
+}
+
+/* 잘못된 속성 값 */
+.invalid {
+  width: 100pixels;
+  height: none;
+}
+
+/* 선택자 중첩 과다 */
+.header nav ul li a span {
+  color: red;
+} 

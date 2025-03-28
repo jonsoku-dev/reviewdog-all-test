@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lint Error Example</title>
+</head>
+<body>
+    <!-- 닫히지 않은 태그 -->
+    <div>
+        <p>This paragraph is not closed
+        <span>This span is not closed
+    </div>
+
+    <!-- 일관성 없는 들여쓰기 -->
+    <div>
+    <p>Bad indentation</p>
+        </div>
+
+    <!-- 빈 alt 속성 -->
+    <img src="image.jpg" alt="">
+
+    <!-- 인라인 스타일 사용 -->
+    <div style="color: red; font-size: 16px;">
+        Bad practice using inline styles
+    </div>
+
+    <!-- 대문자 태그 사용 -->
+    <DIV>
+        Using uppercase tags
+    </DIV>
+
+    <!-- type 속성 불필요하게 사용 -->
+    <script type="text/javascript">
+        console.log('Hello');
+    </script>
+</body>
+</html> 
