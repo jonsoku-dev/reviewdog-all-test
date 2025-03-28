@@ -1,10 +1,18 @@
 name: reviewdog
 on: [pull_request]
 
+env:
+  SLACK_CHANNEL: '#reviewdog-slack-test'
+  SLACK_USERNAME: 'Lint Test Bot'
+  SLACK_ICON_EMOJI: ':test:'
+
 jobs:
   reviewdog:
     name: reviewdog
     runs-on: ubuntu-latest
+    permissions:
+        contents: read      # 코드를 읽기 위한 권한
+        pull-requests: write # PR에 코멘트를 달기 위한 권한
     steps:
       - uses: actions/checkout@v4
       - name: reviewdog
@@ -14,3 +22,13 @@ jobs:
           reporter: github-pr-review
           workdir: "."
           level: info 
+          filter_mode: nofilter
+          fail_level: none
+          eslint_flags: "**/*.{js,jsx,ts,tsx}"
+          stylelint_input: "**/*.css"
+          markdownlint_flags: "**/*.md"
+          notification_type: slack
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          slack_channel: ${{ env.SLACK_CHANNEL }}
+          slack_username: ${{ env.SLACK_USERNAME }}
+          slack_icon_emoji: ${{ env.SLACK_ICON_EMOJI }}
